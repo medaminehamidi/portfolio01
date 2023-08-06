@@ -7,18 +7,9 @@ import { Article } from "./article";
 import { Redis } from "@upstash/redis";
 import { Eye } from "lucide-react";
 
-const redis = Redis.fromEnv();
-
 export const revalidate = 60;
 export default async function ProjectsPage() {
-	const views = (
-		await redis.mget<number[]>(
-			...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")),
-		)
-	).reduce((acc, v, i) => {
-		acc[allProjects[i].slug] = v ?? 0;
-		return acc;
-	}, {} as Record<string, number>);
+	const views = 0
 
 	const featured = allProjects.find((project) => project.slug === "unkey")!;
 	const top2 = allProjects.find((project) => project.slug === "planetfall")!;
@@ -41,6 +32,15 @@ export default async function ProjectsPage() {
 		<div className="relative pb-16">
 			<Navigation />
 			<div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+				<div className="max-w-2xl mx-auto lg:mx-0">
+					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+						Technologies
+					</h2>
+					<p className="mt-4 text-zinc-400">
+						Some of the projects are from work and some are on my own time.
+					</p>
+				</div>
+				<div className="w-full h-px bg-zinc-800" />
 				<div className="max-w-2xl mx-auto lg:mx-0">
 					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
 						Projects
@@ -70,7 +70,7 @@ export default async function ProjectsPage() {
 									<span className="flex items-center gap-1 text-xs text-zinc-500">
 										<Eye className="w-4 h-4" />{" "}
 										{Intl.NumberFormat("en-US", { notation: "compact" }).format(
-											views[featured.slug] ?? 0,
+											0,
 										)}
 									</span>
 								</div>
@@ -96,7 +96,7 @@ export default async function ProjectsPage() {
 					<div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
 						{[top2, top3].map((project) => (
 							<Card key={project.slug}>
-								<Article project={project} views={views[project.slug] ?? 0} />
+								<Article project={project} views={0} />
 							</Card>
 						))}
 					</div>
@@ -109,7 +109,7 @@ export default async function ProjectsPage() {
 							.filter((_, i) => i % 3 === 0)
 							.map((project) => (
 								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
+									<Article project={project} views={0} />
 								</Card>
 							))}
 					</div>
@@ -118,7 +118,7 @@ export default async function ProjectsPage() {
 							.filter((_, i) => i % 3 === 1)
 							.map((project) => (
 								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
+									<Article project={project} views={0} />
 								</Card>
 							))}
 					</div>
@@ -127,7 +127,7 @@ export default async function ProjectsPage() {
 							.filter((_, i) => i % 3 === 2)
 							.map((project) => (
 								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
+									<Article project={project} views={0} />
 								</Card>
 							))}
 					</div>
