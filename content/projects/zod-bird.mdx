@@ -1,172 +1,59 @@
 ---
-title: "Zod Bird"
-description: Zodbird is an e2e typed tinybird.co client library for typescript, leveraging zod for type safety and transformations
-repository: chronark/zod-bird
-date: "2023-05-21"
+title: Designer Showcase Portfolio
+description: a platform for talented designers to display their work and connect with potential clients.
+date: "2021-05-23"
+repository: medaminehamidi/portfolio
 published: true
   
 ---
 
-- typesafe
-- handles building the url params for you
-- easy transformation of resulting data
-- built in cache directives for nextjs
-- built in retry logic for ratelimited requests
 
+![](/portfolio.png)
 
-```ts
-import { Tinybird } from "@chronark/zod-bird";
-import { z } from "zod";
+Description:
 
-const tb = new Tinybird({ token: "token" });
+    The Designer Showcase Portfolio is a web application built with React.js, Redux, and Express, offering a platform for talented designers to display their work and connect with potential clients. The portfolio is enriched with OAuth2 authentication, ensuring secure and seamless login for designers. It allows designers to create personalized portfolios, upload their projects, and share their creative journey with the world.
 
-export const getEvents = tb.buildPipe({
-  pipe: "get_events__v1",
-  parameters: z.object({
-    tenantId: z.string(),
-  }),
-  data: z.object({
-    event: z.string(),
-    time: z.number().transform((t) => new Date(t)),
-  }),
-});
+Key Features:
 
+    OAuth2 Authentication: Designers can register and log in securely using OAuth2 authentication, which allows them to sign in with their Google, Facebook, or other OAuth2-compatible accounts. This eliminates the need for separate account creation and enhances user convenience.
 
-const res = await getEvents({ tenantId: "chronark" })
+    Dashboard: Upon successful authentication, designers are welcomed to their personalized dashboard. Here, they can manage their profile, upload, edit, and organize their projects, and access performance statistics.
 
-// res.data = {event: string, time: Date}[]
-```
+    Portfolio Customization: Designers have the freedom to customize their portfolio's look and feel, including themes, colors, and fonts, to reflect their unique brand identity.
 
-## Install
+    Project Showcase: The portfolio showcases the designer's projects in an aesthetically pleasing manner. Each project displays project details, images, descriptions, and tags for easy categorization.
 
-```
-npm i @chronark/zod-bird
-```
+    Project Management: Designers can conveniently upload and manage their projects from the dashboard. They can add, edit, and delete projects, ensuring their portfolio remains up to date and relevant.
 
+    Project Tags and Filtering: The portfolio supports the use of tags to categorize projects. This enables visitors to filter projects by different criteria, such as design type, industry, or technology used.
 
-## Ingesting Data
+    Social Sharing: Designers can promote their work by incorporating social media sharing buttons on each project, allowing visitors to share their favorite designs with their network.
 
-```ts
-// lib/tinybird.ts
-import { Tinybird } from "./client";
-import { z } from "zod";
+    Contact Form: A contact form allows potential clients and visitors to get in touch with designers easily. Messages from the form are delivered to the designer's registered email.
 
-const tb = new Tinybird({ token: process.env.TINYBIRD_TOKEN! });
+    Analytics Integration: The portfolio integrates with analytics tools (e.g., Google Analytics) to provide designers with insights into visitor traffic and user interactions.
 
-export const publishEvent = tb.buildIngestEndpoint({
-  datasource: "events__v1",
-  event: z.object({
-    id: z.string(),
-    tenantId: z.string(),
-    channelId: z.string(),
-    time: z.number().int(),
-    event: z.string(),
-    content: z.string().optional().default(""),
-    metadata: z.string().optional().default(""),
-  }),
-});
-```
+    Responsive Design: The portfolio is designed to be responsive and optimized for various devices, ensuring a seamless user experience across desktops, tablets, and mobile devices.
 
-```ts
-// somewhere.ts
-import { publishEvent } from "./lib/tinybird";
+Front-End Technologies:
 
-await publishEvent({
-  id: "1",
-  tenantId: "1",
-  channelId: "1",
-  time: Date.now(),
-  event: "test",
-  content: "test",
-  metadata: JSON.stringify({ test: "test" }),
-});
-```
+    React.js: The front-end of the portfolio is developed using React.js, providing a dynamic and interactive user interface.
 
+    Redux: Redux is employed for state management, ensuring a consistent and predictable data flow within the application.
 
+    React Router: React Router facilitates smooth navigation between different sections of the portfolio.
 
-## Querying Endpoints
+    Axios: Axios is used to handle API requests for data exchange with the back-end.
 
-```ts
-// lib/tinybird.ts
-import { Tinybird } from "./client";
-import { z } from "zod";
+Back-End Technologies:
 
-const tb = new Tinybird({ token: process.env.TINYBIRD_TOKEN! });
+    Express: The back-end server is built using Express, a Node.js framework that provides the foundation for handling HTTP requests, routing, and middleware.
 
-export const getChannelActivity = tb.buildPipe({
-  pipe: "get_channel_activity__v1",
-  parameters: z.object({
-    tenantId: z.string(),
-    channelId: z.string().optional(),
-    start: z.number(),
-    end: z.number().optional(),
-    granularity: z.enum(["1m", "1h", "1d", "1w", "1M"]),
-  }),
-  data: z.object({
-    time: z.string().transform((t) => new Date(t).getTime()),
-    count: z
-      .number()
-      .nullable()
-      .optional()
-      .transform((v) => (typeof v === "number" ? v : 0)),
-  }),
-});
-```
+    OAuth2 Provider: An OAuth2 provider is integrated into the back-end to handle authentication with third-party services.
 
-```ts
-// somewhere.ts
-import { getChannelActivity } from "./lib/tinybird";
+    Database: A database system, such as MongoDB or PostgreSQL, is used to store designer information, project data, and user details.
 
+    OAuth2 Library: Libraries like Passport.js are employed to simplify the OAuth2 authentication process.
 
-const res = await getChannelActivity({
-   tenantId: "1",
-   channelId: "1",
-   start: 123,
-   end: 1234,
-   granularity: "1h"
-})
-
-```
-`res` is the response from the tinybird endpoint, but now fully typed and the data has been parsed according to the schema defined in `data`.
-
-## Advanced
-
-### Caching
-
-You can add cache directives to each pipe.
-
-
-#### Disable caching (useful in Next.js where everything is cached by default)
-
-```ts
-tb.buildPipe({
-  pipe: "some_pipe__v1",
-  parameters: z.object({
-   hello: z.string()
-  }),
-  data: z.object({
-    response: z.string()
-  }),
-   opts: {
-      cache: "no-store" // <-------- Add this
-   };
-});
-
-```
-
-#### Cache for 15 minutes
-
-```ts
-
-tb.buildPipe({
-  pipe: "some_pipe__v1",
-  parameters: z.object({
-   hello: z.string()
-  }),
-  data: z.object({
-    response: z.string()
-  }),
-   opts: {
-      revalidate: 900 ;// <-------- Add this
-    };
-});
+The Designer Showcase Portfolio brings together the power of React.js, Redux, Express, and OAuth2 authentication to create an elegant and secure platform for designers to showcase their talents, attract potential clients, and build a strong online presence in the design community.

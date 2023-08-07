@@ -6,16 +6,16 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
 	title: {
-		default: "chronark.com",
-		template: "%s | chronark.com",
+		default: "med amine Hamidi",
+		template: "https://medaminehamidi.vercel.app/"
 	},
-	description: "Software engineer at upstash.com and founder of planetfall.io",
+	description: "Software engineer at alphorm.com",
 	openGraph: {
-		title: "chronark.com",
+		title: "med amine Hamidi",
 		description:
-			"Software engineer at upstash.com and founder of planetfall.io",
-		url: "https://chronark.com",
-		siteName: "chronark.com",
+			"Software engineer at alphorm.com",
+		url: "https://medaminehamidi.vercel.app/",
+		siteName: "med amine Hamidi",
 		images: [
 			{
 				url: "https://chronark.com/og.png",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "Chronark",
+		title: "sunburn__",
 		card: "summary_large_image",
 	},
 	icons: {

@@ -1,36 +1,46 @@
 ---
-title: QStash
-description: QStash is a fully managed serverless queue and messaging service designed for the serverless era.
-date: "2022-07-18"
-url: https://upstash.com/qstash
+title: Heiler.app Web
+description: Meddical cabinet managing app landing page
+date: "2022-10-18"
+url: https://doc-web-git-feature-pricing-aymengraoui.vercel.app
 published: true
-  
 ---
 
-QStash is an HTTP based messaging and scheduling solution for the serverless and edge runtimes.
+[![](/heiler.png)](https://doc-web-git-feature-pricing-aymengraoui.vercel.app)
 
-- 100% serverless, no stateful connections required. Messages are pushed to your API.
-- At-least-once delivery guaranteed to any public API
-- Pubsub via topics
-- Delay message delivery
-- Message deduplication
-- Scheduling via CRON
+Description:
+
+    The Medical Management App Landing Page is a modern and visually appealing website designed to showcase the features and benefits of a medical management application. The landing page is built using React.js, Next.js, and Tailwind CSS, ensuring optimal performance, smooth navigation, and a clean, responsive design. It targets medical professionals, clinics, and healthcare facilities, highlighting the app's capabilities in streamlining medical operations and enhancing patient care.
+
+Key Features:
+
+    Hero Section: The landing page begins with an impactful hero section, featuring an image or illustration representing medical professionals using the app. A concise and compelling headline emphasizes the value proposition of the medical management app.
+
+    Call-to-Action (CTA): A prominent CTA button encourages visitors to take immediate action, such as signing up for a free trial or scheduling a demo. The button stands out with a contrasting color and an attention-grabbing text.
+
+    Features Showcase: This section highlights the key features and functionalities of the medical management app using concise descriptions and captivating visuals. Each feature is presented with an icon, making it easy for visitors to grasp the app's capabilities at a glance.
+
+    Testimonials: The landing page includes testimonials from satisfied users or healthcare professionals who have benefited from the app. The testimonials add credibility and build trust among potential customers.
+
+    App Screenshots: Realistic screenshots of the app's user interface showcase its clean and user-friendly design. These images provide visitors with a visual understanding of the app's layout and functionality.
+
+    Integration Benefits: If the medical management app integrates with existing medical software or electronic health records (EHR) systems, a section can highlight the benefits of such integration, such as streamlined workflows and data synchronization.
+
+    Responsive Design: The landing page is optimized for responsiveness, ensuring seamless viewing and interaction on various devices, including desktops, tablets, and smartphones.
+
+    Contact and Support: Visitors can easily get in touch for inquiries or support through a contact form or live chat option. The landing page also includes contact details for customer support.
+
+Frontend Technologies:
+
+    React.js: The landing page's core functionality and interactivity are developed using React.js, providing a dynamic user interface.
+
+    Next.js: Next.js is utilized to leverage server-side rendering (SSR) for improved performance and search engine optimization (SEO).
+
+    Tailwind CSS: Tailwind CSS is used for styling the components and creating a consistent and visually appealing design.
+
+    Responsive Design: Media queries and responsive design principles are implemented to ensure the landing page adapts seamlessly to different screen sizes.
+
+    Icons from Lucide: The Lucide library is used to incorporate icons for the various features and sections of the landing page.
 
 
-Formally, QStash is a message queue and task scheduler designed for serverless runtimes. Informally, QStash is a glue for your serverless functions.
-
-There was a perception serverless was only good for simple tasks. Not anymore. People build powerful systems with serverless stack. Powerful systems are composed of multiple components. Communication among those components is a big engineering problem. There are already great solutions for this problem. But we think existing solutions do not fit in serverless space. Either they are too complex or not designed to work with stateless runtimes. So we want a solution which (is):
-
-- Works anywhere including serverless and edge.
-- Messaging as a service with no backend for users to run.
-- Lightweight, easy to understand, requires nothing to learn.
-- Price scales to zero.
-
-Let's talk about a real world example. We have an e-commerce app and we want to send an informational email after each purchase. We have a service (an API route) for new purchases (newPurchase) and a second service for sending emails and notifications (sendEmail). We can call the sendEmail service from the newPurchase service. But what if the call fails? Should we wait for the response and retry? What if too many calls congest the sendEmail service and the service does not respond on time? You need to handle all these cases in your newPurchase service. Moreover, when you change the contract of sendEmail service; you have to update your newPurchase service too.
-
-If you use QStash in the above example, you simply send a request to QStash from the newPurchase service. QStash will queue the request and call the sendEmail service. If the service does not respond, QStash will retry with a backoff strategy. The latency of sendEmail service will not affect the newPurchase service, because it will not wait for a response from the sendEmail service. QStash decouples the newPurchase and sendEmail services. You can update both services independently as long as you keep the message format compatible.
-
-With QStash, you can add delays to the requests. Send an email 3 days after the shipment to remind the customer to add a review. You can also schedule tasks. You can send the requests with a CRON expression, so it will be run repetitively.
-
-
-To learn more about QStash, visit [upstash.com/qstash](upstash.com/qstash).
+The Medical Management App Landing Page serves as a powerful marketing tool, effectively presenting the app's features and benefits to healthcare professionals and institutions. Built with React.js, Next.js, and Tailwind CSS, the landing page delivers a smooth and engaging user experience, encouraging visitors to explore the medical management app and take the next step toward improving their medical operations and patient care.

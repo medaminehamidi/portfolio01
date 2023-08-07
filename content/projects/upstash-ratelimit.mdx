@@ -1,49 +1,57 @@
 ---
-title: "@upstash/ratelimit"
-description: Ratelimiting library for serverless and edge runtimes. Built on top of Upstash Redis.
-date: "2022-06-06"
-url: https://upstash.com/blog/upstash-ratelimit
-repository: upstash/ratelimit
+title: Perfumary Shop Product Management App
+description: The Perfumary Shop Product Management App provides a user-friendly interface for managing various product details and automates essential tasks to streamline the shop's operations.
+date: "2022-07-09"
+repository: medaminehamidi/prefumary
 published: true
   
 ---
-
-In today's digital age, serverless computing has become increasingly popular due to its scalability and cost-efficiency. One of the challenges of serverless computing is to manage resources efficiently, and one critical aspect of this is rate limiting. Rate limiting is a technique that limits the number of requests a client can make to a server over a given period. This technique can prevent abuse, improve performance, and reduce costs. One npm package that helps implement rate limiting for serverless applications is @upstash/ratelimit, built on top of Upstash Redis.
-
-Upstash is a managed Redis-compatible database service designed for serverless applications.
-
-`@upstash/ratelimit` is an npm package that provides serverless rate limiting using Upstash Redis. The package offers a simple API that can be used to limit the number of requests a client can make within a given time frame. The following algorithms are supported:
-
-- Fixed window
-- Sliding window
-- Leaky bucket
+Description:
 
 
-Using `@upstash/ratelimit` is straightforward. First, you need to install the package using npm:
+    The Perfumary Shop Product Management App is a robust backend application developed using C# and .NET, designed to efficiently manage products for a perfumary shop. It utilizes a PostgreSQL database to store and organize product information, making it easy for shop owners to add, edit, and track their inventory effectively. The app provides a user-friendly interface for managing various product details and automates essential tasks to streamline the shop's operations.
 
-```bash
-npm install @upstash/ratelimit @upstash/redis
-```
-Then, you can use it in your  application:
+Key Features:
 
-```ts
-import { Ratelimit } from "@upstash/ratelimit"
-import { Redis } from "@upstash/redis"
+    Product Management: The app allows the shop owner to add new perfumes, update existing products, and remove discontinued items. Each product is associated with details such as name, brand, fragrance notes, size, price, and availability.
 
-const ratelimit = new Ratelimit({
-    redis: new Redis({
-        url: "",
-        token: ""
-    }),
-    limiter: Ratelimit.slidingWindow(10, "10s"),
-    analytics: true
-})
+    Inventory Tracking: The app keeps track of the available quantity for each product, ensuring that shop owners can monitor stock levels and avoid running out of popular items.
+   ```csharp
+    namespace Perfumes.Models
+{
+    public class ProductDto
+    {
+        public Guid Id { get; set; }
+        public string? Name { get; set; }
+        public double? Price { get; set; }
+        public int IsInStock { get; set; }
+    }
+}
+ ```
+    Categories and Tags: Perfumes can be categorized based on factors like gender (e.g., men, women, unisex), fragrance family (e.g., floral, woody, oriental), and occasion (e.g., casual, formal). Additionally, tags can be assigned to products to facilitate easy searching and filtering.
 
+    Search and Filtering: The app provides search functionality to quickly find specific products based on name, brand, or fragrance notes. Users can also apply filters based on categories, tags, or price range to refine search results.
 
-// Check if the client has exceeded the rate limit
-const { success } = await ratelimit.limit("identifier")
-```
+    Product Analytics: Shop owners can access product analytics, such as sales trends, best-selling items, and inventory turnover, to make data-driven decisions for restocking and marketing strategies.
 
-In the code above, we initialize Upstash with our Upstash Redis credentials and define our rate limiting rules. We then call the `limit` function, passing the identifier. The function returns a Promise that resolves with `success` and some other useful data.
+    User Authentication: The app includes a secure authentication system to ensure that only authorized personnel can access and manage product information.
 
-`@upstash/ratelimit` is a useful npm package for serverless rate limiting that simplifies the process of implementing rate limiting for serverless applications. The package is built on top of Upstash Redis, which provides a complete solution for serverless applications. With `@upstash/ratelimit`, serverless developers can easily implement rate limiting, which can help prevent abuse, improve performance, and reduce costs.
+    Product Images: Images of each perfume can be uploaded and stored in the database, making the product list visually appealing and providing customers with a comprehensive shopping experience.
+
+    Role-Based Access Control: The application employs role-based access control, allowing different levels of access for shop owners, managers, and staff members. This ensures data security and maintains privacy.
+
+Backend Technologies:
+
+    C# and .NET: The backend of the app is developed using C# programming language and the .NET framework, offering a powerful and scalable platform for application development.
+
+    Entity Framework Core: Entity Framework Core is used for database access and management, providing object-relational mapping capabilities and simplifying data interactions with the PostgreSQL database.
+
+    PostgreSQL: The PostgreSQL database is employed to store and manage product information efficiently, offering robustness and data integrity.
+
+    RESTful API: The backend app exposes a RESTful API that enables smooth communication between the front-end and the database.
+
+    Authentication Middleware: The .NET authentication middleware is used to handle user authentication and access control.
+
+    Dependency Injection: Dependency Injection is utilized to promote loose coupling and enhance maintainability and testability of the application.
+
+The Perfumary Shop Product Management App serves as a powerful backend solution for managing product information, automating inventory tracking, and optimizing business operations for perfumary shop owners. By leveraging C# .NET and PostgreSQL, the app ensures a seamless and reliable experience for efficiently handling the shop's product inventory and enhancing customer satisfaction.

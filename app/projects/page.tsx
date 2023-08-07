@@ -34,15 +34,6 @@ export default async function ProjectsPage() {
 			<div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
 				<div className="max-w-2xl mx-auto lg:mx-0">
 					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-						Technologies
-					</h2>
-					<p className="mt-4 text-zinc-400">
-						Some of the projects are from work and some are on my own time.
-					</p>
-				</div>
-				<div className="w-full h-px bg-zinc-800" />
-				<div className="max-w-2xl mx-auto lg:mx-0">
-					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
 						Projects
 					</h2>
 					<p className="mt-4 text-zinc-400">
@@ -131,6 +122,32 @@ export default async function ProjectsPage() {
 								</Card>
 							))}
 					</div>
+				</div>
+				<div className="w-full h-px bg-zinc-800" />
+				<div className="mx-auto lg:mx-0">
+					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+						Technical
+					</h2>
+					<p className="mt-4 text-zinc-400">
+						As a Full-Stack Developer, I possess a diverse skill set and extensive expertise in both front-end and back-end web development, enabling me to design, build, and deploy complete and robust web applications. My proficiency in various programming languages, frameworks, and technologies allows me to handle all layers of a web application with efficiency and precision.
+						<br /><br />
+						Front-End Development:<br />
+						I am highly proficient in front-end technologies such as HTML, CSS, and JavaScript, and I have experience in building responsive and visually appealing user interfaces. Leveraging frameworks mainly React.js I create interactive and dynamic user experiences that optimize usability and engagement. My strong understanding of UI/UX principles ensures that the applications I develop are intuitive, user-friendly, and aesthetically pleasing.
+						<br /><br />
+						Back-End Development:<br />
+						I possess comprehensive knowledge of back-end programming languages like Node.js and C# .Net. I have expertise in developing server-side logic and RESTful APIs, enabling seamless communication between the front-end and back-end components. I have experience with various databases, including PostgreSQL, and MongoDB, and I design and implement efficient database structures to store and retrieve application data securely.
+						<br /><br />
+						API Development:<br />
+						I excel in building and integrating Application Programming Interfaces (APIs) that enable data exchange and interaction between different components of the web application. This includes creating well-documented and scalable APIs that adhere to industry standards and facilitate seamless integration with external services and third-party applications.
+						<br /><br />
+						Version Control and Collaboration:<br />
+						I am proficient in using version control systems like Git to manage and track code changes efficiently. Collaboration is at the core of my development process, and I work effectively in cross-functional teams, collaborating with designers, other developers, and stakeholders to deliver high-quality solutions.
+						<br /><br />
+						Problem-Solving and Continuous Learning:<br />
+						I am a detail-oriented and analytical problem solver, capable of identifying and resolving issues across the entire development stack. My passion for continuous learning and staying updated with the latest web technologies and best practices empowers me to deliver modern and efficient solutions.
+						<br /><br />
+						With a comprehensive understanding of front-end and back-end development, combined with strong problem-solving and collaboration skills, I am committed to delivering innovative and scalable web applications that drive business success and enhance user experiences. My Full-Stack Developer expertise allows me to contribute significantly to the complete software development lifecycle and consistently deliver high-quality solutions.
+					</p>
 				</div>
 			</div>
 		</div>
