@@ -34,10 +34,10 @@ export default async function ProjectsPage() {
 			<div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
 				<div className="max-w-2xl mx-auto lg:mx-0">
 					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-						Projects
+						Projets
 					</h2>
 					<p className="mt-4 text-zinc-400">
-						Some of the projects are from work and some are on my own time.
+						Certains de ces projets sont liés au travail et d'autres sont réalisés sur mon mon temps libre.
 					</p>
 				</div>
 				<div className="w-full h-px bg-zinc-800" />
@@ -55,7 +55,7 @@ export default async function ProjectsPage() {
 												}).format(new Date(featured.date))}
 											</time>
 										) : (
-											<span>SOON</span>
+											<span>Prochainement</span>
 										)}
 									</div>
 								</div>
@@ -71,7 +71,7 @@ export default async function ProjectsPage() {
 								</p>
 								<div className="absolute bottom-4 md:bottom-8">
 									<p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-										Read more <span aria-hidden="true">&rarr;</span>
+										En savoir plus <span aria-hidden="true">&rarr;</span>
 									</p>
 								</div>
 							</article>
@@ -120,28 +120,21 @@ export default async function ProjectsPage() {
 				<div className="w-full h-px bg-zinc-800" />
 				<div className="mx-auto lg:mx-0">
 					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-						Technical
+						Technique
 					</h2>
 					<p className="mt-4 text-zinc-400">
-						As a Full-Stack Developer, I possess a diverse skill set and extensive expertise in both front-end and back-end web development, enabling me to design, build, and deploy complete and robust web applications. My proficiency in various programming languages, frameworks, and technologies allows me to handle all layers of a web application with efficiency and precision.
-						<br /><br />
-						Front-End Development:<br />
-						I am highly proficient in front-end technologies such as HTML, CSS, and JavaScript, and I have experience in building responsive and visually appealing user interfaces. Leveraging frameworks mainly React.js I create interactive and dynamic user experiences that optimize usability and engagement. My strong understanding of UI/UX principles ensures that the applications I develop are intuitive, user-friendly, and aesthetically pleasing.
-						<br /><br />
-						Back-End Development:<br />
-						I possess comprehensive knowledge of back-end programming languages like Node.js and C# .Net. I have expertise in developing server-side logic and RESTful APIs, enabling seamless communication between the front-end and back-end components. I have experience with various databases, including PostgreSQL, and MongoDB, and I design and implement efficient database structures to store and retrieve application data securely.
-						<br /><br />
-						API Development:<br />
-						I excel in building and integrating Application Programming Interfaces (APIs) that enable data exchange and interaction between different components of the web application. This includes creating well-documented and scalable APIs that adhere to industry standards and facilitate seamless integration with external services and third-party applications.
-						<br /><br />
-						Version Control and Collaboration:<br />
-						I am proficient in using version control systems like Git to manage and track code changes efficiently. Collaboration is at the core of my development process, and I work effectively in cross-functional teams, collaborating with designers, other developers, and stakeholders to deliver high-quality solutions.
-						<br /><br />
-						Problem-Solving and Continuous Learning:<br />
-						I am a detail-oriented and analytical problem solver, capable of identifying and resolving issues across the entire development stack. My passion for continuous learning and staying updated with the latest web technologies and best practices empowers me to deliver modern and efficient solutions.
-						<br /><br />
-						With a comprehensive understanding of front-end and back-end development, combined with strong problem-solving and collaboration skills, I am committed to delivering innovative and scalable web applications that drive business success and enhance user experiences. My Full-Stack Developer expertise allows me to contribute significantly to the complete software development lifecycle and consistently deliver high-quality solutions.
-					</p>
+						En tant que développeur Full-Stack, je possède un ensemble de compétences diversifiées et une expertise étendue dans le développement web front-end et back-end, ce qui me permet de concevoir, construire et déployer des applications web complètes et robustes. Ma maîtrise des différents langages de programmation, frameworks et technologies me permet de gérer toutes les couches d'une application web avec efficacité et précision.						<br /><br />
+						Développement Front-End:<br />
+						Je suis très compétent dans les technologies front-end telles que HTML, CSS et JavaScript, et j'ai de l'expérience dans la construction d'interfaces utilisateur responsives et visuellement intéressantes. Ma forte compréhension des principes UI/UX garantit que les applications que je développe sont intuitives, conviviales et esthétiquement agréables.						<br /><br />
+						Développement Back-End:<br />
+						Je possède une connaissance approfondie des langages de programmation back-end tels que Node.js et C# .Net. J'ai de l'expertise dans le développement de la logique côté serveur et des API RESTful, permettant une communication transparente entre les composants front-end et back-end. J'ai de l'expérience avec diverses bases de données, y inclus PostgreSQL et MongoDB, et je développe et implémente des structures de base de données efficaces pour stocker et récupérer les données de l'application en toute sécurité.						<br /><br />
+						Développement API:<br />
+						J'excelle dans la création et l'intégration d'interfaces de programmation d'applications (API) qui permettent l'échange de données et l'interaction entre les différents composants de l'application web. Il s'agit notamment de créer des API bien documentées et évolutives qui respectent les normes du secteur et facilitent l'intégration transparente avec des services externes et des applications indépendantes.						<br /><br />
+						Contrôle des versions et collaboration:<br />
+						Je sais utiliser des systèmes de contrôle de version tels que Git pour gérer et suivre efficacement les modifications du code. La collaboration est au cœur de mon système de développement, et je travaille efficacement au sein d'équipes interfonctionnelles, en collaboration avec des concepteurs, d'autres développeurs et des parties concernées, afin de fournir des solutions de haute qualité.						<br /><br />
+						Problem-Solving et développement continu:<br />
+						J'ai le sens du détail et de l'analyse, et je suis capable d'identifier et de résoudre des problèmes tout au long du processus de développement. Ma passion pour l'apprentissage continu et la mise à jour des dernières technologies web et des meilleures pratiques me permet de fournir des solutions modernes et efficaces.						<br /><br />
+						Avec une compréhension complète du développement front-end et back-end, combinée à de fortes compétences en matière de résolution de problèmes et de collaboration, je m'engage à fournir des applications web innovantes et évolutives qui favorisent la réussite de l'entreprise et améliorent l'expérience de l'utilisateur. Mon expertise en tant que développeur Full-Stack me permet de contribuer de manière significative au cycle de vie complet du développement logiciel et de fournir constamment des solutions de haute qualité.					</p>
 				</div>
 			</div>
 		</div>

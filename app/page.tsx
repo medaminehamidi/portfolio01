@@ -3,7 +3,7 @@ import React from "react";
 import Particles from "./components/particles";
 
 const navigation = [
-	{ name: "Projects", href: "/projects" },
+	{ name: "Projets", href: "/projects" },
 	{ name: "Contact", href: "/contact" },
 ];
 
@@ -35,8 +35,8 @@ export default function Home() {
 			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 			<div className="my-16 text-center animate-fade-in">
 				<h2 className="text-sm md:text-lg text-white ">
-					I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, 
-					E-Learning products at{" "}
+				Je suis un ingénieur informatique spécialisé dans la construction (et occasionnellement dans la conception) d'expériences digitales exceptionnelles.<br/> En ce moment, je me concentre sur la création de produits d'apprentissage en
+				ligne accessibles chez{" "}
 					<Link
 						target="_blank"
 						href="https://alphorm.com/"
