@@ -53,7 +53,6 @@ export const Page = defineDocumentType(() => ({
 	fields: {
 		title: {
 			type: "string",
-			required: true,
 		},
 		description: {
 			type: "string",

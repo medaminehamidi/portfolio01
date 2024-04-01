@@ -1,6 +1,8 @@
+"use client"
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import { allProjects } from "contentlayer/generated";
 
 const navigation = [
 	{ name: "Projets", href: "/projects" },
@@ -8,6 +10,7 @@ const navigation = [
 ];
 
 export default function Home() {
+	console.log(allProjects)
 	return (
 		<div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
 			<nav className="my-16 animate-fade-in">
@@ -45,6 +48,7 @@ export default function Home() {
 						Alphorm.
 					</Link>
 				</h2>
+				<button onClick={() => console.log('hello')}>helo</button>
 			</div>
 		</div>
 	);
